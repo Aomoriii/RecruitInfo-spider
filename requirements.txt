@@ -1,0 +1,6 @@
+PyMySQL==1.0.2
+paramiko==2.7.2
+sshtunnel==0.4.0
+cryptography==2.5
+setuptools==40.6.0
+cffi==1.12
