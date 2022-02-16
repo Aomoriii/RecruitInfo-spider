@@ -12,7 +12,7 @@ class spider():
 
     def started(self):
             for i in range(1):
-                file = open("D:/Scrapy Project/geturl/python/"+ str(i) +".TXT", 'r', encoding='UTF-8')
+                file = open("D:/Scrapy Project/geturl/TXTFiles/python/"+ str(i) +".TXT", 'r', encoding='UTF-8')
                 js = file.read()
                 dic = json.loads(js)
                 with SSHTunnelForwarder(
@@ -179,29 +179,29 @@ class spider():
                         # print(type(list['Rwelfare']))
 
 
-                        # info = """INSERT INTO Recruit(Did_id,Rex_l,Rex_r,Rdegree,Rsalary_l,Rsalary_r,Rwelfare,Rwork,Rscale_l,Rscale_r,Rcompany,Cid_id,Aid_id,Rfinancing,Rjob,Rdate) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')""" \
-                        #        % (
-                        #            list['Rposts'], #Did_id_id
-                        #            list['Rex_l'],
-                        #            list['Rex_r'],
-                        #            list['Rdegree'],
-                        #            list['Rsalary_l'],
-                        #            list['Rsalary_r'],
-                        #            list['Rwelfare'],
-                        #            list['Rwork'],
-                        #            list['Rscale_l'],
-                        #            list['Rscale_r'],
-                        #            list['Rcompany'],
-                        #            list['Rcity'],#Cid_id_id
-                        #            list['Rdistrict'], #Aid_id_id
-                        #            list['Rfinancing'],
-                        #            list['Rjob'],
-                        #            list['Rdate'],
-                        #
-                        #        )
-                        # cursor.execute(info)
-                        # conn.commit()
-                        # print('insert succeed')
+                        info = """INSERT INTO Recruit(Did_id,Rex_l,Rex_r,Rdegree,Rsalary_l,Rsalary_r,Rwelfare,Rwork,Rscale_l,Rscale_r,Rcompany,Cid_id,Aid_id,Rfinancing,Rjob,Rdate) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')""" \
+                               % (
+                                   list['Rposts'], #Did_id_id
+                                   list['Rex_l'],
+                                   list['Rex_r'],
+                                   list['Rdegree'],
+                                   list['Rsalary_l'],
+                                   list['Rsalary_r'],
+                                   list['Rwelfare'],
+                                   list['Rwork'],
+                                   list['Rscale_l'],
+                                   list['Rscale_r'],
+                                   list['Rcompany'],
+                                   list['Rcity'],#Cid_id_id
+                                   list['Rdistrict'], #Aid_id_id
+                                   list['Rfinancing'],
+                                   list['Rjob'],
+                                   list['Rdate'],
+
+                               )
+                        cursor.execute(info)
+                        conn.commit()
+                        print('insert succeed')
 
 if __name__ =="__main__":
    spider = spider()
